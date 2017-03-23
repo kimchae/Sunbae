@@ -2,18 +2,17 @@
     font-family: 'Lato', sans-serif;
 }
 
+h1, h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
 body {
     height: 100%;
-    color: #6c6c6c;
+    color: #000;
 }
 
-.slider .indicators .indicator-item.active,
-.primary {
+.btn:focus, .slider .indicators .indicator-item.active, .primary {
     background-color: #258bf7;
-}
-
-nav {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 nav .brand-logo {
@@ -23,11 +22,11 @@ nav .brand-logo {
     margin-top: -.2%;
 }
 
-nav ul a {
+#menu, nav ul a {
     color: #363231;
 }
 
-ul:not(.browser-default) {
+#nav {
     padding-left: 8%;
 }
 
@@ -54,4 +53,40 @@ nav ul a:hover {
     font-size: 2em;
     font-weight: 700;
     line-height: 10%;
+}
+
+.slider .indicators {
+    top: 80%;
+    z-index: 3;
+}
+
+.slider .indicators .indicator-item {
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+
+.slider img {
+    filter: brightness(50%);
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 1080px) {
+    .slides {
+        height: 60% !important;
+    }
+    .slider .indicators {
+        top: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slides {
+        height: 50% !important;
+    }
+    .slider .indicators {
+        top: 40% !important;
+    }
 }

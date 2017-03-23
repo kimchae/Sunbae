@@ -18,18 +18,18 @@
 <body>
 	<nav class="white">
 		<div class="nav-wrapper">
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+			<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons" id="menu">menu</i></a>
 			<a href="/" class="brand-logo">sunbae</a>
-			<ul class="hide-on-med-and-down left">
+			<ul class="hide-on-med-and-down left" id="nav">
 				<li><a href="sass.html">Drama</a></li>
 				<li><a href="badges.html">Variety</a></li>
 				<li><a href="collapsible.html">Soundtrack</a></li>
 			</ul>
 			<ul class="hide-on-med-and-down right">
 				<li><a href="sass.html"><i class="material-icons">search</i></a></li>
-				<li><a class="waves-effect waves-light btn primary">Log In</a></li>
+				<li><a href="#login" class="waves-effect waves-light btn primary">Log In</a></li>
 			</ul>
-			<ul class="side-nav" id="mobile-demo">
+			<ul class="side-nav" id="mobile-nav">
 				<li><a href="sass.html">Drama</a></li>
 				<li><a href="badges.html">Variety</a></li>
 				<li><a href="collapsible.html">Soundtrack</a></li>
@@ -41,38 +41,66 @@
 	<div class="slider">
 		<ul class="slides">
 			<li>
+				<img src="img/covers/2.jpg">
+				<div class="caption center-align">
+					<h3>Tomorrow With You</h3> A series about Yoo So Joon, a time-traveler who tries to change his unfortunate fate by marrying Song Ma Rin.
+				</div>
+			</li>
+			<li>
 				<img src="img/covers/1.jpg">
 				<div class="caption center-align">
-					<h3>Strong Woman Do Bong-Soon</h3>
-					Sparks fly when a woman with Herculean strength goes to work as the bodyguard for a spoiled chaebol heir.
+					<h3>Strong Woman Do Bong-Soon</h3> Sparks fly when a woman with Herculean strength goes to work as the bodyguard for a spoiled chaebol heir.
 				</div>
 			</li>
 			<li>
-				<img src="img/covers/1.jpg">
-				<div class="caption left-align">
-					<h3>Strong Woman Do Bong-Soon</h3>
-				</div>
-			</li>
-			<li>
-				<img src="img/covers/1.jpg">
+				<img src="img/covers/3.jpg">
 				<div class="caption right-align">
-					<h3>Right Aligned Caption</h3>
+					<h3>Radiant Office</h3> Ho Won is a young woman who struggles to find a steady job.
 				</div>
 			</li>
 			<li>
-				<img src="img/covers/1.jpg">
-				<div class="caption center-align">
-					<h3>This is our big Tagline!</h3>
+				<img src="img/covers/4.jpg">
+				<div class="caption left-align">
+					<h3>Chief Kim</h3> Kim Gwan-Chul used to work as an accountant, but now he works as a chief for a company.
 				</div>
 			</li>
 		</ul>
 	</div>
 
+
+	<div id="login" class="modal">
+		<form class="form col s12" role="form" method="POST" action="/login">
+			<div class="modal-content">
+				<h4>Login</h4>
+				<div class="row">
+					<div class="input-field col s6">
+						<input id="name" name="name" type="text" class="validate">
+						<label for="name" class="">Username</label>
+					</div>
+					<div class="input-field col s6">
+						<input id="password" name="password" type="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+					<p class="input-field col s6">
+						<input type="checkbox" class="filled-in" id="remember" name="remember" checked="checked">
+						<label for="remember">Remember Me</label>
+					</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="modal-action modal-close btn blue waves-effect waves-light">Log In</button>
+				<a href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
+			</div>
+		</form>
+	</div>
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.1/SmoothScroll.min.js"></script>
 	<script>
 		$(document).ready(function() {
 			$(".button-collapse").sideNav();
+			$('.modal').modal();
 			$('.slider').slider();
 		});
 	</script>
