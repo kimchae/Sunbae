@@ -2,13 +2,25 @@
     font-family: 'Lato', sans-serif;
 }
 
-h1, h3 {
+h1, h3, h4 {
     font-family: 'Oswald', sans-serif;
 }
 
 body {
-    height: 100%;
-    color: #000;
+    color: #393839;
+    background-color: #fcfcfc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: 10% !important;
+}
+
+.slider .indicators .indicator-item {
+    margin-right: 0px;
 }
 
 .btn:focus, .slider .indicators .indicator-item.active, .primary {
@@ -56,8 +68,9 @@ nav ul a:hover {
 }
 
 .slider .indicators {
-    top: 80%;
+    margin-top: -3% !important;
     z-index: 3;
+    bottom: auto;
 }
 
 .slider .indicators .indicator-item {
@@ -73,20 +86,22 @@ nav ul a:hover {
     margin-bottom: 0;
 }
 
+footer {
+    padding-bottom: 1%;
+}
+
+.card .card-action a {
+    margin-right: 0 !important;
+}
+
 @media only screen and (max-width: 1080px) {
-    .slides {
-        height: 60% !important;
-    }
     .slider .indicators {
-        top: 50% !important;
+        margin-top: -4% !important;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .slides {
-        height: 50% !important;
-    }
     .slider .indicators {
-        top: 40% !important;
+        margin-top: -8% !important;
     }
 }
