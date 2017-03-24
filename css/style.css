@@ -59,7 +59,11 @@ nav ul a:hover {
 .caption h3 {
     font-size: 2em;
     font-weight: 700;
-    line-height: 10%;
+    margin-bottom: 0;
+}
+
+.caption p {
+    margin-top: 0;
 }
 
 .slider .indicators {
@@ -98,6 +102,10 @@ footer {
 
 .rounded {
     border-radius: .5em;
+}
+
+.card .ep-card {
+    padding: 5px 5px;
 }
 
 .card a {
