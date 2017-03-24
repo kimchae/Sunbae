@@ -77,6 +77,13 @@ nav ul a:hover {
     background-color: #258bf7;
 }
 
+.slider .slides li img {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .slider img {
     filter: brightness(50%);
 }
