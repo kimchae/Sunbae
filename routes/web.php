@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $firstVisit = true;
+    if (Cookie::get('visit'))
+        $firstVisit = false;
+
+    return view('home', ['firstVisit' => $firstVisit]);
 });
+
+Auth::routes();
+
+#Route::get('/home', 'HomeController@index');
