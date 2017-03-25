@@ -38,8 +38,7 @@ nav .brand-logo {
     padding-left: 8%;
 }
 
-nav ul li.active a,
-nav ul li.active {
+nav ul li.active a, nav ul li.active {
     background-color: inherit;
     color: #258bf7;
 }
@@ -142,6 +141,14 @@ footer {
     padding-left: 5%;
 }
 
+.ep-content {
+    margin-top: 4%;
+}
+
+span.badge {
+    margin-left: 5px;
+}
+
 .titleSpace {
     margin-bottom: 3%;
 }
@@ -154,13 +161,13 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     border: 2px solid #039be5;
     background-color: #039be5;
 }
-.input-field input[type=password]:focus + label,
-.input-field input[type=text]:focus + label {
+
+.input-field input[type=password]:focus+label, .input-field input[type=text]:focus+label {
     color: #039be5;
 }
 
 .input-field label {
-  color: #000;
+    color: #000;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -172,5 +179,8 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
 @media only screen and (max-width: 600px) {
     .slider .indicators {
         margin-top: -8% !important;
+    }
+    footer {
+        padding-bottom: 4% !important;
     }
 }
