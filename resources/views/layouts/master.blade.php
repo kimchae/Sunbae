@@ -45,13 +45,13 @@
 		@if (Request::is('/'))
 			<div class="slider">
 				<ul class="slides z-depth-2">
-					@foreach ($featured as $drama)
+					@foreach ($featured as $show)
 						<li>
-							<img src="img/covers/{{ $drama->id }}.jpg">
+							<img src="img/covers/{{ $show->id }}.jpg">
 							<div class="caption center-align">
-								<h3>{{ $drama->name }}</h3>
-								<p>{{ preg_replace('/([^?!.]*.).*/', '\\1', $drama->synopsis) }}</p>
-								<a class="btn blue waves-effect waves-light">Watch Now</a>
+								<h3>{{ $show->name }}</h3>
+								<p>{{ preg_replace('/([^?!.]*.).*/', '\\1', $show->synopsis) }}</p>
+								<a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}" class="btn blue waves-effect waves-light">Watch Now</a>
 							</div>
 						</li>
 					@endforeach
@@ -102,7 +102,7 @@
 				<h4>Search</h4>
 				<div class="row">
 					<div class="input-field col s12">
-						<input id="q" name="q" placeholder="Tomorrow With You" type="text" class="validate">
+						<input id="q" name="q" placeholder="Tomorrow With You" type="text" class="validate" autofocus>
 					</div>
 				</div>
 			</div>

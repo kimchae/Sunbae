@@ -44,4 +44,20 @@ class ShowController extends Controller
         $results = Show::where('name', 'like', '%'.$query.'%')->orWhere('altname', 'like', '%'.$query.'%')->paginate(5);
         return view('search', ['results' => $results]);
     }
+
+    public function Show($name = NULL)
+    {
+        $show = Show::where('slug', $name)->first();
+        if (!$name)
+            return redirect('/listing/drama');
+        if (!$show)
+            abort(404);
+
+        return view('show', ['show' => $show]);
+    }
+
+    public function View($name = NULL, $episode = NULL)
+    {
+
+    }
 }

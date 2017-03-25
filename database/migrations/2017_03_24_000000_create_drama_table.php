@@ -19,6 +19,7 @@ class CreateDramaTable extends Migration
             $table->integer('type')->default('1');
             $table->string('name');
             $table->string('altname')->nullable()->default(NULL);
+            $table->string('slug')->nullable()->default(NULL);
             $table->text('synopsis')->nullable()->default(NULL);
             $table->string('network')->nullable()->default(NULL);
             $table->integer('tvdb')->nullable()->default(NULL);

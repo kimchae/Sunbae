@@ -1,4 +1,13 @@
 <?php
+/* Slugify all shows
+
+foreach (Show::all() as $show)
+{
+    $show->slug = str_slug($show->name);
+    $show->save();
+}
+*/
+
 /* Useless Atm */
 
 /* Get Show Data
