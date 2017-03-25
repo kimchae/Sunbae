@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-
+use App\Show;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -16,3 +16,14 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('ongoing', function () {
+    $shows = Show::where('tvdb', '>', '0')->get();
+    foreach ($shows as $show) {
+        $tvdb = TVDB::series($show->tvdb)->get();
+        if ($tvdb->data->status == 'Ended')
+            continue;
+        $show->ongoing = 1;
+        $show->save();
+    }
+})->describe('Updates the on-going value of each show.');

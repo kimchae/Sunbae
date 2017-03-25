@@ -1,5 +1,8 @@
 <?php
-
+use App\Show;
+use App\Genre;
+use App\Episode;
+use App\EpTitle;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
