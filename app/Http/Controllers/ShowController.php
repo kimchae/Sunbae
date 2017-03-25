@@ -37,4 +37,11 @@ class ShowController extends Controller
 
         return view('listing', ['type' => ucfirst($type), 'shows' => $shows]);
     }
+
+    public function Search(Request $request)
+    {
+        $query = $request->get('q');
+        $results = Show::where('name', 'like', '%'.$query.'%')->orWhere('altname', 'like', '%'.$query.'%')->paginate(5);
+        return view('search', ['results' => $results]);
+    }
 }

@@ -28,7 +28,7 @@
 					<li{!! set_active(['soundtrack', 'soundtrack/*']) !!}><a href="#">Soundtrack</a></li>
 				</ul>
 				<ul class="hide-on-med-and-down right">
-					<li{!! set_active('search') !!}><a href="sass.html"><i class="material-icons">search</i></a></li>
+					<li{!! set_active('search') !!}><a href="#searchModal"><i class="material-icons">search</i></a></li>
 					<li><a href="#login" id="loginBtn" class="waves-effect waves-light btn primary blue darken-1">Log In</a></li>
 				</ul>
 
@@ -37,7 +37,7 @@
 					<li{!! set_active(['listing/variety', 'variety/*']) !!}><a href="/listing/variety">Variety</a></li>
 					<li{!! set_active(['listing/movies', 'movie/*']) !!}><a href="/listing/movies">Movies</a></li>
 					<li{!! set_active(['soundtrack', 'soundtrack/*']) !!}><a href="#">Soundtrack</a></li>
-					<li{!! set_active('search') !!}><a href="mobile.html">Search</a></li>
+					<li{!! set_active('search') !!}><a href="/search">Search</a></li>
 					<li{!! set_active('login') !!}<a href="/login">Login</a></li>
 				</ul>
 			</div>
@@ -51,7 +51,7 @@
 							<div class="caption center-align">
 								<h3>{{ $drama->name }}</h3>
 								<p>{{ preg_replace('/([^?!.]*.).*/', '\\1', $drama->synopsis) }}</p>
-								<a class="btn blue darken-3 waves-effect waves-light">Watch Now</a>
+								<a class="btn blue waves-effect waves-light">Watch Now</a>
 							</div>
 						</li>
 					@endforeach
@@ -90,7 +90,24 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="modal-action modal-close btn blue waves-effect waves-light blue darken-3">Log In</button>
+				<button type="submit" class="modal-action modal-close btn blue waves-effect waves-light blue">Log In</button>
+				<a href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
+			</div>
+		</form>
+	</div>
+
+	<div id="searchModal" class="modal">
+		<form class="form col s12" role="form" method="get" action="/search">
+			<div class="modal-content">
+				<h4>Search</h4>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="q" name="q" placeholder="Tomorrow With You" type="text" class="validate">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="modal-action modal-close btn blue waves-effect waves-light blue">Search</button>
 				<a href="#!" class="modal-action modal-close waves-effect btn-flat">Cancel</a>
 			</div>
 		</form>

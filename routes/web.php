@@ -28,10 +28,11 @@ Route::get('/', function () {
 
 Route::get('listing/{type?}', 'ShowController@Index');
 
-Route::get('drama/{name}', ['uses' => 'ShowController@Show', 'as' => 'drama']);
-Route::get('variety/{name}', ['uses' => 'ShowController@Show', 'as' => 'variety']);
-Route::get('movie/{name}', ['uses' => 'ShowController@Show', 'as' => 'movie']);
+Route::get('drama/{name}', 'ShowController@Show');
+Route::get('variety/{name}', 'ShowController@Show');
+Route::get('movie/{name}', 'ShowController@Show');
 
+Route::get('search', 'ShowController@Search');
 
 Auth::routes();
 
