@@ -19,9 +19,6 @@
 				@endif
 			@elseif (Request::is('movie/*'))
 				<a class="breadcrumb">{{ $show->name }}</a>
-				@if (Request::is('movie/'.$show->slug.'/*'))
-					<a class="breadcrumb">Episode @yield('number', 'Special')</a>
-				@endif
 			@endif
 		</div>
 	</div>

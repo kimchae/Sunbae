@@ -45,9 +45,21 @@ class ShowController extends Controller
         return view('search', ['results' => $results]);
     }
 
-    public function Show($name = NULL)
+    public function Show(Request $request, $name = NULL)
     {
-        $show = Show::where('slug', $name)->first();
+        switch ($request->segment(1))
+        {
+            case "drama":
+                $type = 1;
+                break;
+            case "variety";
+                $type = 2;
+                break;
+            case "movie";
+                $type = 3;
+                break;
+        }
+        $show = Show::where('type', $type)->where('slug', $name)->first();
         if (!$name)
             return redirect('/listing/drama');
         if (!$show)
@@ -56,9 +68,21 @@ class ShowController extends Controller
         return view('show', ['show' => $show]);
     }
 
-    public function View($name = NULL, $number = NULL)
+    public function View(Request $request, $name = NULL, $number = NULL)
     {
-        $show = Show::where('slug', $name)->first();
+        switch ($request->segment(1))
+        {
+            case "drama":
+                $type = 1;
+                break;
+            case "variety";
+                $type = 2;
+                break;
+            case "movie";
+                $type = 3;
+                break;
+        }
+        $show = Show::where('type', $type)->where('slug', $name)->first();
         if (!is_numeric($number) || !$show)
             abort(404);
 
