@@ -26,7 +26,7 @@
 				</div>
 				<div class="ep-content">
 					<h5 class="center">Episodes</h5>
-					<table class="highlight responsive-table">
+					<table class="highlight responsive-table centered">
   						<thead>
 							<tr>
 								<th></th>
@@ -38,14 +38,14 @@
   						<tbody>
 							@foreach ($show->episodes as $episode)
 								<tr>
-		  							<td><a href="#">Episode {{ $episode->number }}
+		  							<td><a href="/drama/{{ $show->slug }}/{{ $episode->number }}">Episode {{ $episode->number }}
 										@if ($episode->subbed)
 											<span data-badge-caption="Subbed" class="new badge blue"></span>
 										@else
 											<span data-badge-caption="Raw" class="new badge red"></span>
 										@endif
 									</a></td>
-		  							<td>TBA</td>
+		  							<td>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s',  $episode->date)->format('Y-m-d') }}</td>
 		  							<td>{{ $episode->encoder }}</td>
 									<td>{{ $episode->uploader }}</td>
 								</tr>

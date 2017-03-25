@@ -21,6 +21,11 @@
 		<div class="col s12 m7">
 		  	<h4 class="header">Search Results</h4>
 			You searched for "{{ Request::get('q') }}"
+
+			@if ($results->count() == 0)
+				<br><br>
+				&nbsp;&nbsp;No Results Found.
+			@endif
 			@foreach ($results as $result)
 			  	<div class="card horizontal hoverable">
 					<div class="card-image">

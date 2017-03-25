@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<header>
+	<header @if (!Request::is('/'))class="z-depth-1" @endif>
 		<nav class="white">
 			<div class="nav-wrapper">
 				<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons" id="menu">menu</i></a>
@@ -25,7 +25,7 @@
 					<li{!! set_active(['listing', 'listing/drama', 'drama/*']) !!}><a href="/listing/drama">Drama</a></li>
 					<li{!! set_active(['listing/variety', 'variety/*']) !!}><a href="/listing/variety">Variety</a></li>
 					<li{!! set_active(['listing/movies', 'movie/*']) !!}><a href="/listing/movies">Movies</a></li>
-					<li{!! set_active(['soundtrack', 'soundtrack/*']) !!}><a href="#">Soundtrack</a></li>
+					<li{!! set_active(['soundtrack', 'soundtrack/*']) !!}><a href="#" class="tooltipped" data-position="right" data-delay="50" data-tooltip="In Construction">Soundtrack</a></li>
 				</ul>
 				<ul class="hide-on-med-and-down right">
 					<li{!! set_active('search') !!}><a href="#searchModal"><i class="material-icons">search</i></a></li>
@@ -57,6 +57,8 @@
 					@endforeach
 				</ul>
 			</div>
+		@else
+			@include('layouts.breadcrumb')
 		@endif
 	</header>
 
@@ -135,7 +137,7 @@
 			$('.parallax').parallax();
 			@if (Request::is('/'))
 				@if ($firstVisit)
-					Materialize.toast('Welcome to the new Sunbae!', 4000)
+					Materialize.toast('Welcome to the new Sunbae!', 4000, 'rounded')
 					{{ Cookie::queue('visit', '1', 60*24*365) }}
 				@endif
 			@endif

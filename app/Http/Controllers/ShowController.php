@@ -56,8 +56,15 @@ class ShowController extends Controller
         return view('show', ['show' => $show]);
     }
 
-    public function View($name = NULL, $episode = NULL)
+    public function View($name = NULL, $number = NULL)
     {
+        $show = Show::where('slug', $name)->first();
+        if (!is_numeric($number) || !$show)
+            abort(404);
 
+        $episode = $show->episodes->where('number', $number)->first();
+        if ($episode->count() == 0)
+            abort(404);
+        return view('watch', ['show' => $show, 'episode' => $episode]);
     }
 }

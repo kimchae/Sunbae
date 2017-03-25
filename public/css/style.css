@@ -30,6 +30,17 @@ nav .brand-logo {
     margin-top: -.2%;
 }
 
+.breadcrumb-nav {
+    padding-left: 10px;
+    box-shadow: none !important;
+}
+
+.breadcrumb {
+    color: #6f6e6d;
+}
+
+.breadcrumb:before,
+.breadcrumb:last-child,
 #menu, nav ul a {
     color: #363231;
 }
@@ -146,6 +157,8 @@ footer {
 }
 
 span.badge {
+    display: block;
+    float: inherit;
     margin-left: 5px;
 }
 
