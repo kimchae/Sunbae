@@ -38,6 +38,12 @@ nav .brand-logo {
     padding-left: 8%;
 }
 
+nav ul li.active a,
+nav ul li.active {
+    background-color: inherit;
+    color: #258bf7;
+}
+
 nav ul a:hover {
     background-color: inherit;
     color: #258bf7;
@@ -115,6 +121,11 @@ footer {
 
 .card a:hover {
     color: #039be5 !important;
+}
+
+.sort .btn {
+    margin-right: 1%;
+    margin-bottom: 1%;
 }
 
 @media only screen and (max-width: 1080px) {

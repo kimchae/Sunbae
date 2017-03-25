@@ -16,7 +16,7 @@ class CreateEpisodesTable extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('did')->nullable()->default(NULL);
+            $table->integer('show_id')->nullable()->default(NULL);
             $table->integer('number')->nullable()->default(NULL);
             $table->string('drive');
             $table->string('uploader')->default('ddolpali');

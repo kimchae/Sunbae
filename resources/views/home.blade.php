@@ -1,71 +1,39 @@
 @extends('layouts.master')
 
 @section('content')
-	<h4>Recent Uploads</h4>
+	<h4 id="recent-uploads">Recent Uploads</h4>
 	<div class="row">
-		<div class="col s6 m3">
-			<div class="card rounded hoverable">
-				<a href="#">
-					<div class="card-image">
-						<img src="img/posters/1.jpg">
-					</div>
-					<div class="card-action center ep-card">
-						<div id="dname">Tomorrow With You</div>
-						Episode 1
-					</div>
-				</a>
+		@foreach ($latest as $episode)
+			<div class="col s6 m3">
+				<div class="card rounded hoverable">
+					<a href="#">
+						<div class="card-image">
+							<img src="img/posters/{{ $episode->show_id }}.jpg">
+						</div>
+						<div class="card-action center ep-card">
+							<div id="dname">{{ $episode->show->name }}</div>
+							Episode {{ $episode->number }}
+						</div>
+					</a>
+				</div>
 			</div>
-		</div>
+		@endforeach
 	</div>
-	<h4>On-Going Drama</h4>
+	<h4 id="on-going">On-Going Drama</h4>
 	<div class="row">
-		<div class="col s6 m3">
-			<div class="card rounded hoverable">
-				<a href="#">
-					<div class="card-image">
-						<img src="img/posters/1.jpg">
-					</div>
-					<div class="card-action center truncate">
-						Tomorrow With You
-					</div>
-				</a>
+		@foreach ($ongoing as $drama)
+			<div class="col s6 m3">
+				<div class="card rounded hoverable">
+					<a href="#">
+						<div class="card-image">
+							<img src="img/posters/{{ $drama->id }}.jpg">
+						</div>
+						<div class="card-action center truncate">
+							{{ $drama->name }}
+						</div>
+					</a>
+				</div>
 			</div>
-		</div>
-		<div class="col s6 m3">
-			<div class="card rounded hoverable">
-				<a href="#">
-					<div class="card-image">
-						<img src="img/posters/1.jpg">
-					</div>
-					<div class="card-action center truncate">
-						Strong Woman Do-Bong Soon
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col s6 m3">
-			<div class="card rounded hoverable">
-				<a href="#">
-					<div class="card-image">
-						<img src="img/posters/1.jpg">
-					</div>
-					<div class="card-action center truncate">
-						Missing Nine
-					</div>
-				</a>
-			</div>
-		</div>
-		<div class="col s6 m3">
-			<div class="card rounded hoverable">
-				<a href="#">
-					<div class="card-image">
-						<img src="img/posters/1.jpg">
-					</div>
-					<div class="card-action center truncate">
-						Chief Kim
-					</div>
-				</a>
-			</div>
-		</div>
+		@endforeach
 	</div>
 @endsection
