@@ -7,13 +7,17 @@
 				<a class="breadcrumb">Listing</a>
 			@elseif (Request::is('search'))
 				<a class="breadcrumb">Search</a>
+			@elseif (Request::is('register'))
+				<a class="breadcrumb">Register</a>
+			@elseif (Request::is('login'))
+				<a class="breadcrumb">Login</a>
 			@elseif (Request::is('drama/*'))
-				<a class="breadcrumb">{{ $show->name }}</a>
+				<a href="/drama/{{ $show->slug }}" class="breadcrumb">{{ $show->name }}</a>
 				@if (Request::is('drama/'.$show->slug.'/*'))
 					<a class="breadcrumb">Episode @yield('number', 'Special')</a>
 				@endif
 			@elseif (Request::is('variety/*'))
-				<a class="breadcrumb">{{ $show->name }}</a>
+				<a href="/variety/{{ $show->slug }}" class="breadcrumb">{{ $show->name }}</a>
 				@if (Request::is('variety/'.$show->slug.'/*'))
 					<a class="breadcrumb">Episode @yield('number', 'Special')</a>
 				@endif

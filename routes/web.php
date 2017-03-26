@@ -31,14 +31,21 @@ Route::get('drama/{name?}', 'ShowController@Show');
 Route::get('variety/{name?}', 'ShowController@Show');
 Route::get('movie/{name?}', 'ShowController@Show');
 
-Route::get('drama/{name}/{number}', 'ShowController@View');
-Route::get('variety/{name}/{number}', 'ShowController@View');
-Route::get('movie/{name}/{number}', 'ShowController@View');
+Route::get('drama/{name}/episode-{number}', 'ShowController@View');
+Route::get('variety/{name}/episode-{number}', 'ShowController@View');
+Route::get('movie/{name}/episode-{number}', 'ShowController@View');
 
 Route::get('search', 'ShowController@Search');
 
 Route::get('embed', 'ShowController@embed');
 
 Auth::routes();
+
+Route::get('/logout', function()
+{
+    Auth::logout();
+    Session::flush();
+    return Redirect::to('/');
+});
 
 #Route::get('/home', 'HomeController@index');

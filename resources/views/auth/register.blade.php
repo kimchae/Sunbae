@@ -1,76 +1,55 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+		<div class="col s12">
+			<div class="card-panel" style="margin-top: 3%;">
+                <h5>Register</h5>
+                <div class="row">
+                    @if($errors->has('name') || $errors->has('email') || $errors->has('password'))
+                        <div class="" style="padding-left: 3%; color: #d43f3a;">
+                            @foreach ($errors->all() as $error)
+                                {{ $error }}<br>
+                            @endforeach
+                        </div>
+                    @endif
+                    <form class="form login-form col s12" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="omoJisooOppa" id="name" name="name" type="text" class="validate{{ $errors->has('name') ? ' invalid' : '' }}" required autofocus>
+                                <label for="name">Enter a Username</label>
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="aigooooo" id="password" name="password" type="password" class="validate{{ $errors->has('password') ? ' invalid' : '' }}" required>
+                                <label for="password">Enter a Password</label>
                             </div>
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="aigooooo" id="password-confirm" name="password_confirmation" type="password" class="validate{{ $errors->has('password') ? ' invalid' : '' }}" required>
+                                <label for="password-confirm">Confirm your Password</label>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="koreanumberwon@aim.com" id="email" name="email" type="email" class="validate{{ $errors->has('email') ? ' invalid' : '' }}" required>
+                                <label for="email" data-error="Incorrect email.">Enter a Valid Email</label>
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
+                        <div class="row">
+                            <div class="input-field col s12 offset-m4">
+                                {!! app('captcha')->display(); !!}<br>
                             </div>
+                        </div>
+                        <div class="row center">
+                            <button type="submit" class="btn blue darken-3 waves-effect waves-light">Register</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

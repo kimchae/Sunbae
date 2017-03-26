@@ -173,7 +173,7 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     background-color: #039be5;
 }
 
-.input-field input[type=password]:focus+label, .input-field input[type=text]:focus+label {
+.input-field input[type=email]:focus+label, .input-field input[type=password]:focus+label, .input-field input[type=text]:focus+label {
     color: #039be5;
 }
 
@@ -210,6 +210,11 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     position: absolute;
     float: right;
     left: 90%;
+}
+
+.eplinks {
+    margin-top: 2%;
+    padding: 0 3%;
 }
 
 @media only screen and (max-width: 1080px) {

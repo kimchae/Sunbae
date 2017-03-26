@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Show;
+use App\Episode;
 use App\EpTitle;
 use Illuminate\Http\Request;
 
@@ -91,7 +92,15 @@ class ShowController extends Controller
         if ($episode->count() == 0)
             abort(404);
 
-        $title = EpTitle::where('did', $show->id)->where('ep', $episode->number)->first()->title;
-        return view('watch', ['show' => $show, 'episode' => $episode, 'title' => $title]);
+        $title = EpTitle::where('did', $show->id)->where('ep', $episode->number)->first();
+        if (!$title)
+            $title = "{$show->name} Episode {$episode->number}";
+        else
+            $title = "\"$title->title\"";
+
+        $epPrev = Episode::where('show_id', $show->id)->where('number', $number - 1)->first();
+        $epNext = Episode::where('show_id', $show->id)->where('number', $number + 1)->first();
+
+        return view('watch', ['show' => $show, 'episode' => $episode, 'title' => $title, 'epPrev' => $epPrev, 'epNext' => $epNext]);
     }
 }

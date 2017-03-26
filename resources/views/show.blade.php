@@ -38,7 +38,7 @@
   						<tbody>
 							@foreach ($show->episodes as $episode)
 								<tr>
-		  							<td><a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}/{{ $episode->number }}">Episode {{ $episode->number }}
+		  							<td><a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}/episode-{{ $episode->number }}">Episode {{ $episode->number }}
 										@if ($episode->subbed)
 											<span data-badge-caption="Subbed" class="new badge blue"></span>
 										@else

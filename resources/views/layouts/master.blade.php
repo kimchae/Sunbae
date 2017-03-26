@@ -8,7 +8,6 @@
 	<!--Import materialize.css-->
 	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="/css/style.css" media="screen,projection" />
-
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald|Lato" rel="stylesheet">
 
@@ -29,7 +28,12 @@
 				</ul>
 				<ul class="hide-on-med-and-down right">
 					<li{!! set_active('search') !!}><a href="#searchModal"><i class="material-icons">search</i></a></li>
-					<li><a href="#login" id="loginBtn" class="waves-effect waves-light btn primary blue darken-1">Log In</a></li>
+					@if (Auth::check())
+						<li><a href="/logout" class="waves-effect waves-light btn primary blue darken-1">Logout</a></li>
+					@else
+						<li><a href="/register" style="margin-right: 0;" class="waves-effect waves-light btn primary blue darken-1">Register</a></li>
+						<li><a href="#login" id="loginBtn" class="waves-effect waves-light btn primary blue darken-1">Log In</a></li>
+					@endif
 				</ul>
 
 				<ul class="side-nav" id="mobile-nav">
@@ -38,7 +42,12 @@
 					<li{!! set_active(['listing/movies', 'movie/*']) !!}><a href="/listing/movies">Movies</a></li>
 					<li{!! set_active(['soundtrack', 'soundtrack/*']) !!}><a href="#">Soundtrack</a></li>
 					<li{!! set_active('search') !!}><a href="/search">Search</a></li>
-					<li{!! set_active('login') !!}<a href="/login">Login</a></li>
+					@if (Auth::check())
+						<li><a href="/logout">Log Out</a></li>
+	                @else
+						<li{!! set_active('register') !!}><a href="/register">Register</a></li>
+	                    <li{!! set_active('login') !!}><a href="/login">Login</a></li>
+	                @endif
 				</ul>
 			</div>
 		</nav>
@@ -73,7 +82,8 @@
 	</footer>
 
 	<div id="login" class="modal">
-		<form class="form col s12" role="form" method="POST" action="/login">
+		<form class="form col s12" role="form" method="POST" action="{{ route('login') }}">
+			{{ csrf_field() }}
 			<div class="modal-content">
 				<h4>Login</h4>
 				<div class="row">
@@ -139,6 +149,11 @@
 				@if ($firstVisit)
 					Materialize.toast('Welcome to the new Sunbae!', 4000, 'rounded')
 					{{ Cookie::queue('visit', '1', 60*24*365) }}
+				@endif
+			@endif
+			@if (!\Request::is('/login') && !\Request::is('/register'))
+				@if($errors->has('name') || $errors->has('password'))
+					Materialize.toast('{{ $errors->first() }}', 4000, 'rounded')
 				@endif
 			@endif
 		});

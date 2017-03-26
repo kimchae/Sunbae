@@ -6,7 +6,7 @@
 		@foreach ($latest as $episode)
 			<div class="col s6 m3">
 				<div class="card rounded hoverable">
-					<a href="/{{ $episode->show->type == 1 ? 'drama' : ($episode->show->type == 2 ? 'variety' : 'movie') }}/{{ $episode->show->slug }}/{{ $episode->number }}">
+					<a href="/{{ $episode->show->type == 1 ? 'drama' : ($episode->show->type == 2 ? 'variety' : 'movie') }}/{{ $episode->show->slug }}/episode-{{ $episode->number }}">
 						<div class="card-image">
 							<img src="img/posters/{{ $episode->show_id }}.jpg">
 						</div>
