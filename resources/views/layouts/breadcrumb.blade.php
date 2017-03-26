@@ -5,6 +5,8 @@
 			@if (Request::is('listing/*') || Request::is('listing'))
 				<a class="breadcrumb">{{ $show->type == 1 ? 'Drama' : ($show->type == 2 ? 'Variety' : 'Movie') }}</a>
 				<a class="breadcrumb">Listing</a>
+			@elseif (Request::is('upload'))
+				<a class="breadcrumb">Upload</a>
 			@elseif (Request::is('search'))
 				<a class="breadcrumb">Search</a>
 			@elseif (Request::is('register'))

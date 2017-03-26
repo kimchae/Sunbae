@@ -37,7 +37,9 @@ Route::get('movie/{name}/episode-{number}', 'ShowController@View');
 
 Route::get('search', 'ShowController@Search');
 
-Route::get('embed', 'ShowController@embed');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('upload', 'PageController@Upload');
+});
 
 Auth::routes();
 

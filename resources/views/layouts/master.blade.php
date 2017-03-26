@@ -145,6 +145,8 @@
 			$('.modal').modal();
 			$('.slider').slider();
 			$('.parallax').parallax();
+			$('select').material_select();
+
 			@if (Request::is('/'))
 				@if ($firstVisit)
 					Materialize.toast('Welcome to the new Sunbae!', 4000, 'rounded')
