@@ -37,6 +37,8 @@ Route::get('movie/{name}/{number}', 'ShowController@View');
 
 Route::get('search', 'ShowController@Search');
 
+Route::get('embed', 'ShowController@embed');
+
 Auth::routes();
 
 #Route::get('/home', 'HomeController@index');

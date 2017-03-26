@@ -20,7 +20,7 @@
 		<nav class="white">
 			<div class="nav-wrapper">
 				<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons" id="menu">menu</i></a>
-				<a href="/" class="brand-logo">sunbae</a>
+				<a href="/" class="brand-logo">{{ lcfirst(config('app.name')) }}</a>
 				<ul class="hide-on-med-and-down left" id="nav">
 					<li{!! set_active(['listing', 'listing/drama', 'drama/*']) !!}><a href="/listing/drama">Drama</a></li>
 					<li{!! set_active(['listing/variety', 'variety/*']) !!}><a href="/listing/variety">Variety</a></li>
@@ -68,7 +68,7 @@
 
 	<footer class="page-footer footer-copyright grey darken-4">
 		<div class="container white-text center">
-			&copy; Sunbae. 2016-2017.
+			&copy; {{ config('app.name') }} 2016-2017.
 		</div>
 	</footer>
 

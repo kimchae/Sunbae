@@ -39,9 +39,7 @@ nav .brand-logo {
     color: #6f6e6d;
 }
 
-.breadcrumb:before,
-.breadcrumb:last-child,
-#menu, nav ul a {
+.breadcrumb:before, .breadcrumb:last-child, #menu, nav ul a {
     color: #363231;
 }
 
@@ -183,6 +181,37 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     color: #000;
 }
 
+.video-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container-16x9 {
+    padding-bottom: 56.25%;
+}
+
+.video-container-4x3 {
+    padding-bottom: 75%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container .poop {
+    width: 10%;
+    height: 20%;
+    z-index: 99;
+    position: absolute;
+    float: right;
+    left: 90%;
+}
+
 @media only screen and (max-width: 1080px) {
     .slider .indicators {
         margin-top: -4% !important;
@@ -195,5 +224,10 @@ input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]),
     }
     footer {
         padding-bottom: 4% !important;
+    }
+    .video-container .poop {
+        width: 20%;
+        height: 40%;
+        left: 80%;
     }
 }
