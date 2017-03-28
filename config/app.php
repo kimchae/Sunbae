@@ -107,6 +107,10 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'contributing' => env('ENABLE_CONTRIBUTE', false),
+    'private_mode' => env('PRIVATE_MODE', false),
+    'discord' => env('DISCORD', "https://discord.gg/z2bdyrz"),
+
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration

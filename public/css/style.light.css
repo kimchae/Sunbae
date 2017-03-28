@@ -1,0 +1,238 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+h1, h3, h4, h5 {
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    color: #393839;
+    background-color: #fcfcfc;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: 5% !important;
+}
+
+.slider .indicators .indicator-item {
+    margin-right: 0px;
+}
+
+nav .brand-logo {
+    color: #363231;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 1%;
+    margin-top: -.2%;
+}
+
+.breadcrumb-nav {
+    padding-left: 10px;
+    box-shadow: none !important;
+}
+
+.breadcrumb {
+    color: #6f6e6d;
+}
+
+.breadcrumb:before, .breadcrumb:last-child, #menu, nav ul a {
+    color: #363231;
+}
+
+#nav {
+    padding-left: 8%;
+}
+
+nav ul li.active a, nav ul li.active {
+    background-color: inherit;
+    color: #258bf7;
+}
+
+nav ul a:hover {
+    background-color: inherit;
+    color: #258bf7;
+}
+
+.side-nav {
+    padding-left: 0 !important;
+}
+
+.caption {
+    font-size: 1em;
+    text-shadow: 0 1px 1px #000, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.caption h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.caption p {
+    margin-top: 0;
+}
+
+.slider .indicators {
+    margin-top: -3% !important;
+    z-index: 3;
+    bottom: auto;
+}
+
+.slider .indicators .indicator-item {
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+
+.btn:focus, .slider .indicators .indicator-item.active, .primary {
+    background-color: #258bf7;
+}
+
+.slider .slides li img {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider img {
+    filter: brightness(50%);
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+footer {
+    padding-bottom: 1%;
+}
+
+.rounded {
+    border-radius: .5em;
+}
+
+.card .ep-card {
+    padding: 5px 5px;
+}
+
+.card a {
+    margin-right: 0 !important;
+    color: #393839 !important;
+}
+
+.card a:hover {
+    color: #039be5 !important;
+}
+
+.card.horizontal .card-image {
+    max-width: 15%;
+}
+
+#dname {
+    font-weight: bold;
+}
+
+.sort .btn {
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.content {
+    margin-top: 5%;
+    min-height: 600px;
+    padding-left: 5%;
+}
+
+.ep-content {
+    margin-top: 4%;
+}
+
+span.badge {
+    display: block;
+    float: inherit;
+    margin-left: 5px;
+}
+
+.titleSpace {
+    margin-bottom: 3%;
+}
+
+.titleSpace>h4 {
+    margin-bottom: 0%;
+}
+
+input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #039be5;
+}
+
+[type="checkbox"].filled-in:checked+label:after {
+    border: 2px solid #039be5;
+    background-color: #039be5;
+}
+
+.input-field input[type=email]:focus+label, .input-field input[type=password]:focus+label, .input-field input[type=text]:focus+label {
+    color: #039be5;
+}
+
+.input-field label {
+    color: #000;
+}
+
+.video-container {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container-16x9 {
+    padding-bottom: 56.25%;
+}
+
+.video-container-4x3 {
+    padding-bottom: 75%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container .poop {
+    width: 10%;
+    height: 20%;
+    z-index: 99;
+    position: absolute;
+    float: right;
+    left: 90%;
+}
+
+.eplinks {
+    margin-top: 2%;
+    padding: 0 3%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .slider .indicators {
+        margin-top: -4% !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .slider .indicators {
+        margin-top: -8% !important;
+    }
+    footer {
+        padding-bottom: 4% !important;
+    }
+    .video-container .poop {
+        width: 20%;
+        height: 40%;
+        left: 80%;
+    }
+}

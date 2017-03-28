@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('pageTitle', $show->name.' - 1080p HD Stream')
+@section('pageDesc', 'Watch an no ads, HD 1080p/720p Stream for '.$show->name.' at Sunbae! '.$show->synopsis)
+@section('tags', $show->name)
 
 @section('content')
 	<div class="row">

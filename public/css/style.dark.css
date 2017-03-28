@@ -7,8 +7,8 @@ h1, h3, h4, h5 {
 }
 
 body {
-    color: #393839;
-    background-color: #fcfcfc;
+    color: #fff;
+    background-color: #212121;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -19,12 +19,16 @@ main {
     margin-bottom: 5% !important;
 }
 
+.btn:hover, .btn-large:hover {
+    color: #fff;
+}
+
 .slider .indicators .indicator-item {
     margin-right: 0px;
 }
 
 nav .brand-logo {
-    color: #363231;
+    color: #fff;
     font-family: 'Oswald', sans-serif;
     padding-left: 1%;
     margin-top: -.2%;
@@ -36,11 +40,11 @@ nav .brand-logo {
 }
 
 .breadcrumb {
-    color: #6f6e6d;
+    color: #dfdfdf;
 }
 
 .breadcrumb:before, .breadcrumb:last-child, #menu, nav ul a {
-    color: #363231;
+    color: #fff;
 }
 
 #nav {
@@ -54,11 +58,7 @@ nav ul li.active a, nav ul li.active {
 
 nav ul a:hover {
     background-color: inherit;
-    color: #258bf7;
-}
-
-#loginBtn:hover {
-    color: #fff;
+    color: #F44336;
 }
 
 .side-nav {
@@ -135,6 +135,10 @@ footer {
     max-width: 15%;
 }
 
+.card-panel {
+    background-color: #191919;
+}
+
 #dname {
     font-weight: bold;
 }
@@ -148,10 +152,15 @@ footer {
     margin-top: 5%;
     min-height: 600px;
     padding-left: 5%;
+    background-color: #25292c;
 }
 
 .ep-content {
     margin-top: 4%;
+}
+
+table.highlight>tbody>tr:hover {
+    background-color: #2a2e31;
 }
 
 span.badge {
@@ -166,6 +175,14 @@ span.badge {
 
 .titleSpace>h4 {
     margin-bottom: 0%;
+}
+
+.modal h1, .modal h2, .modal h3, .modal h4 {
+    color: #000;
+}
+
+.input-field label:not(.label-icon).active {
+    color: #fff;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {

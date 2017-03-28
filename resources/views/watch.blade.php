@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('pageTitle', $show->name.' Episode '.$episode->number.' - 1080p HD Stream')
+@section('pageDesc', 'Watch an no ads, HD 1080p/720p Stream for '.$show->name.' Episode '.$episode->number.' at Sunbae!')
+@section('tags', $show->name.',Episode '.$episode->number)
 
 @section('number', $episode->number)
 
@@ -16,7 +19,7 @@
 				</div>
 				<div class="eplinks center-align">
 					@if ($epPrev)
-						<a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}/episode-{{ $epPrev->number }}" class="left">Episode {{ $epPrev->number }}</a> 
+						<a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}/episode-{{ $epPrev->number }}" class="left">Episode {{ $epPrev->number }}</a>
 					@endif
 					<a href="/{{ $show->type == 1 ? 'drama' : ($show->type == 2 ? 'variety' : 'movie') }}/{{ $show->slug }}">Go Back to Info Page</a>
 					@if ($epNext)

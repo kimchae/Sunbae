@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('pageTitle', 'Korean Shows Search')
 
 @section('content')
 	@if (!Request::get('q'))
@@ -29,11 +30,11 @@
 			@foreach ($results as $result)
 			  	<div class="card horizontal hoverable">
 					<div class="card-image">
-				  		<a href="/{{ $drama->type == 1 ? 'drama' : ($drama->type == 2 ? 'variety' : 'movie') }}/{{ $drama->slug }}"><img src="/img/posters/{{ $result->id }}.jpg" width="10%"></a>
+				  		<a href="/{{ $result->type == 1 ? 'drama' : ($result->type == 2 ? 'variety' : 'movie') }}/{{ $result->slug }}"><img src="/img/posters/{{ $result->id }}.jpg" width="10%"></a>
 					</div>
 					<div class="card-stacked">
 					  	<div class="card-content" style="width:100%">
-							<a href="/{{ $drama->type == 1 ? 'drama' : ($drama->type == 2 ? 'variety' : 'movie') }}/{{ $drama->slug }}"><h5>{{ $result->name }}</h5></a>
+							<a href="/{{ $result->type == 1 ? 'drama' : ($result->type == 2 ? 'variety' : 'movie') }}/{{ $result->slug }}"><h5>{{ $result->name }}</h5></a>
 							<p>{{ limit_text($result->synopsis, 70) }}</p>
 						</div>
 					</div>

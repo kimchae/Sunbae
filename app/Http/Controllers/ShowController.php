@@ -11,7 +11,7 @@ class ShowController extends Controller
 {
     public function Index(Request $request, $type = 'drama')
     {
-
+        $allowedSegments = array('drama', 'variety', 'movies');
         $allowedSorts = array('name', 'airdate');
         $allowedOrders = array('asc', 'desc');
         $sort = $request->get('sort');
@@ -20,13 +20,13 @@ class ShowController extends Controller
             $sort = 'name';
         if (!in_array($request->get('order'), $allowedOrders))
             $order = 'asc';
+        if (!in_array($request->segment(2), $allowedSegments))
+            return redirect('/listing/drama');
 
         switch ($type)
         {
-            default:
             case "drama":
                 $typeC = 1;
-                $type = "drama";
                 break;
             case "variety":
                 $typeC = 2;
@@ -98,8 +98,8 @@ class ShowController extends Controller
         else
             $title = "\"$title->title\"";
 
-        $epPrev = Episode::where('show_id', $show->id)->where('number', $number - 1)->first();
-        $epNext = Episode::where('show_id', $show->id)->where('number', $number + 1)->first();
+        $epPrev = Episode::where('show_id', $show->id)->where('number', $number - 1)->where('approved', 1)->first();
+        $epNext = Episode::where('show_id', $show->id)->where('number', $number + 1)->where('approved', 1)->first();
 
         return view('watch', ['show' => $show, 'episode' => $episode, 'title' => $title, 'epPrev' => $epPrev, 'epNext' => $epNext]);
     }

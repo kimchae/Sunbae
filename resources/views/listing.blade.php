@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('pageTitle', '1080p Korean '.ucfirst(Request::segment(2)).' Stream - Listing')
 
 @section('content')
 	<h4>{{ $type }} Listing</h4>

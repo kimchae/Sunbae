@@ -11,6 +11,8 @@ class PageController extends Controller
 {
 	public function Upload(Request $request)
     {
+		if (!config('app.contributing'))
+			abort(404);
 		if ($request->get('step') == '2')
 		{
 			$results = Show::where('name', 'like', '%'.$request->get('q').'%')->orWhere('altname', 'like', '%'.$request->get('q').'%')->paginate(5);
@@ -27,12 +29,15 @@ class PageController extends Controller
 			return view('upload', ['show' => $show, 'key' => $key]);
 		} else if ($request->get('step') == '4')
 		{
-			$episode = Episode::where('show_id', $request->get('id'))->where('number', $request->get('number'))->first();
+			$episode = Episode::where('show_id', $request->get('id'))->where('number', $request->get('number'))->where('approved', 1)->first();
 			if ($episode)
 				return back();
+			/* TODO: Bot
 			$key = Key::where('uploader', $request->get('uploader'))->where('key', $request->get('key'))->get();
 			if ($key->used != 1)
 				return back();
+			$key->used = 2;
+			$key->save();*/
 
 			$episode = new Episode();
 			$episode->show_id = $request->get('id');

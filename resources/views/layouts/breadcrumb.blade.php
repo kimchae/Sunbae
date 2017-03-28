@@ -1,4 +1,4 @@
-<nav class="white z-depth-1 breadcrumb-nav">
+<nav class="{{ $primary }} z-depth-1 breadcrumb-nav">
 	<div class="nav-wrapper">
 		<div class="col s12">
 			<a href="/" class="breadcrumb">Sunbae</a>

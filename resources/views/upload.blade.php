@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('pageTitle', 'Contribute to our Listing')
 
 @section('content')
 	<div class="row">
@@ -132,6 +133,8 @@
 							<button type="submit" class="btn blue waves-effect waves-light right">Submit</button>
 						</form>
 					@endif
+				@elseif (Request::get('step') == '4' && Request::get('uploader') || Request::get('encoder'))
+					<p>Submitted request.</p>
 				@endif
 			</div>
 		</div>
