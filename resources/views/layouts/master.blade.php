@@ -8,10 +8,12 @@
 		case 'light':
 			$primary = 'white';
 			$highlight = 'blue darken-3';
+			$footerColor = 'gray darken-4 white-text';
 			break;
 		case 'dark':
 			$primary = 'grey darken-4';
 			$highlight = 'red darken-3';
+			$footerColor = 'white black-text';
 			break;
 	}
 @endphp
@@ -100,8 +102,8 @@
 		@yield('content')
 	</main>
 
-	<footer class="page-footer footer-copyright grey darken-4">
-		<div class="container white-text center">
+	<footer class="page-footer footer-copyright {{ $footerColor }}">
+		<div class="container center">
 			&copy; {{ config('app.name') }} 2016-2017.
 		</div>
 	</footer>

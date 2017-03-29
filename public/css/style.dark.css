@@ -53,7 +53,7 @@ nav .brand-logo {
 
 nav ul li.active a, nav ul li.active {
     background-color: inherit;
-    color: #258bf7;
+    color: #C62828;
 }
 
 nav ul a:hover {
@@ -112,8 +112,6 @@ nav ul a:hover {
 
 footer {
     padding-bottom: 1%;
-    background-color: #fff !important;
-    color: #212121;
 }
 
 .rounded {
