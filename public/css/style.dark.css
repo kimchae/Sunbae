@@ -112,6 +112,8 @@ nav ul a:hover {
 
 footer {
     padding-bottom: 1%;
+    background-color: #fff !important;
+    color: #212121;
 }
 
 .rounded {
