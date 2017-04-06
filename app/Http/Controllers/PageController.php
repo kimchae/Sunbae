@@ -47,7 +47,10 @@ class PageController extends Controller
 			$episode->encoder = $request->get('encoder');
 			$episode->quality = $request->get('quality');
 			$episode->subbed = 1;
-			$episode->approved = 0;
+			if ($request->get('uploader') == 'aegyo')
+				$episode->approved = 1;
+			else
+				$episode->approved = 0;
 
 			$episode->save();
 			return view('upload');

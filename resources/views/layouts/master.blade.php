@@ -8,7 +8,7 @@
 		case 'light':
 			$primary = 'white';
 			$highlight = 'blue darken-3';
-			$footerColor = 'gray darken-4 white-text';
+			$footerColor = 'grey darken-4 white-text';
 			break;
 		case 'dark':
 			$primary = 'grey darken-4';
